@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+body {
+  direction: rtl;
+  font-family: 'Noto Kufi Arabic', sans-serif;
+}
