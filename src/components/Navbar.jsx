@@ -59,7 +59,6 @@ export default function Navbar() {
     { path: "/", label: "الرئيسية" },
     { path: "/about", label: "حولنا" },
     { path: "/services", label: "خدماتنا" },
-    { path: "/contact", label: "تواصل معنا" }
   ];
 
   return (
