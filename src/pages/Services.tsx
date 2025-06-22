@@ -1,13 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
-import { 
-  Code, 
-  Smartphone, 
-  Globe, 
-  Database, 
-  Shield, 
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
+import {
+  Code,
+  Smartphone,
+  Globe,
+  Database,
+  Shield,
   TrendingUp,
   Bot,
   Cloud,
@@ -16,8 +16,8 @@ import {
   BarChart3,
   Headphones,
   CheckCircle,
-  ArrowRight
-} from 'lucide-react';
+  ArrowLeft,
+} from "lucide-react";
 
 const Services: React.FC = () => {
   const [ref, inView] = useInView({
@@ -27,96 +27,106 @@ const Services: React.FC = () => {
 
   const services = [
     {
-      category: 'التطوير التقني',
+      category: "التطوير التقني",
       icon: Code,
-      color: 'from-blue-500 to-cyan-500',
-      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: "from-blue-500 to-cyan-500",
+      image:
+        "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
       services: [
-        'مواقع تعريفية ومتاجر إلكترونية',
-        'صفحات هبوط عالية التحويل',
-        'تطبيقات الجوال المتقدمة',
-        'تطبيقات ويب تفاعلية (PWA)',
-        'حجز وإدارة النطاقات',
-        'استضافة عالية الأداء'
-      ]
+        "مواقع تعريفية ومتاجر إلكترونية",
+        "صفحات هبوط عالية التحويل",
+        "تطبيقات الجوال المتقدمة",
+        "تطبيقات ويب تفاعلية (PWA)",
+        "حجز وإدارة النطاقات",
+        "استضافة عالية الأداء",
+      ],
     },
     {
-      category: 'الأنظمة المؤسسية',
+      category: "الأنظمة المؤسسية",
       icon: Database,
-      color: 'from-purple-500 to-pink-500',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: "from-purple-500 to-pink-500",
+      image:
+        "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800",
       services: [
-        'حلول ERP وCRM مخصصة',
-        'تكامل APIs وبوابات الدفع',
-        'أنظمة إدارة المحتوى',
-        'أتمتة العمليات الإدارية',
-        'حلول البنية التحتية السحابية',
-        'تحليلات البيانات المتقدمة'
-      ]
+        "حلول ERP وCRM مخصصة",
+        "تكامل APIs وبوابات الدفع",
+        "أنظمة إدارة المحتوى",
+        "أتمتة العمليات الإدارية",
+        "حلول البنية التحتية السحابية",
+        "تحليلات البيانات المتقدمة",
+      ],
     },
     {
-      category: 'التسويق الرقمي',
+      category: "التسويق الرقمي",
       icon: TrendingUp,
-      color: 'from-green-500 to-emerald-500',
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: "from-green-500 to-emerald-500",
+      image:
+        "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
       services: [
-        'استراتيجيات SEO متقدمة',
-        'إدارة الحملات الإعلانية',
-        'إنتاج محتوى إبداعي',
-        'تحليلات الأداء والتقارير',
-        'إدارة وسائل التواصل',
-        'التسويق بالمحتوى'
-      ]
+        "استراتيجيات SEO متقدمة",
+        "إدارة الحملات الإعلانية",
+        "إنتاج محتوى إبداعي",
+        "تحليلات الأداء والتقارير",
+        "إدارة وسائل التواصل",
+        "التسويق بالمحتوى",
+      ],
     },
     {
-      category: 'الأمان والدعم',
+      category: "الأمان والدعم",
       icon: Shield,
-      color: 'from-red-500 to-orange-500',
-      image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: "from-red-500 to-orange-500",
+      image:
+        "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
       services: [
-        'دعم فني 24/7',
-        'تحديثات أمنية دورية',
-        'مراقبة الأنظمة المستمرة',
-        'خدمات النسخ الاحتياطي',
-        'فحص الثغرات الأمنية',
-        'استشارات الأمان السيبراني'
-      ]
+        "دعم فني 24/7",
+        "تحديثات أمنية دورية",
+        "مراقبة الأنظمة المستمرة",
+        "خدمات النسخ الاحتياطي",
+        "فحص الثغرات الأمنية",
+        "استشارات الأمان السيبراني",
+      ],
     },
     {
-      category: 'الأتمتة الذكية',
+      category: "الأتمتة الذكية",
       icon: Bot,
-      color: 'from-indigo-500 to-purple-500',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: "from-indigo-500 to-purple-500",
+      image:
+        "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
       services: [
-        'أتمتة سير العمل',
-        'تحليلات تنبؤية ذكية',
-        'روبوتات الدردشة الذكية',
-        'أتمتة التسويق',
-        'تخصيص المحتوى الذكي',
-        'حلول الذكاء الاصطناعي'
-      ]
+        "أتمتة سير العمل",
+        "تحليلات تنبؤية ذكية",
+        "روبوتات الدردشة الذكية",
+        "أتمتة التسويق",
+        "تخصيص المحتوى الذكي",
+        "حلول الذكاء الاصطناعي",
+      ],
     },
     {
-      category: 'الاستشارات التقنية',
+      category: "الاستشارات التقنية",
       icon: Settings,
-      color: 'from-teal-500 to-blue-500',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: "from-teal-500 to-blue-500",
+      image:
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
       services: [
-        'تحليل الاحتياجات التقنية',
-        'تصميم الحلول المخصصة',
-        'تطوير استراتيجيات رقمية',
-        'تحسين الأداء والكفاءة',
-        'التدريب التقني المتخصص',
-        'إدارة المشاريع التقنية'
-      ]
-    }
+        "تحليل الاحتياجات التقنية",
+        "تصميم الحلول المخصصة",
+        "تطوير استراتيجيات رقمية",
+        "تحسين الأداء والكفاءة",
+        "التدريب التقني المتخصص",
+        "إدارة المشاريع التقنية",
+      ],
+    },
   ];
 
   const features = [
-    { icon: Zap, title: 'سرعة في التنفيذ', desc: 'تسليم المشاريع في الوقت المحدد' },
-    { icon: BarChart3, title: 'نتائج مضمونة', desc: 'حلول مثبتة الفعالية' },
-    { icon: Headphones, title: 'دعم مستمر', desc: 'خدمة عملاء 24/7' },
-    { icon: Cloud, title: 'تقنيات حديثة', desc: 'أحدث الأدوات والتقنيات' },
+    {
+      icon: Zap,
+      title: "سرعة في التنفيذ",
+      desc: "تسليم المشاريع في الوقت المحدد",
+    },
+    { icon: BarChart3, title: "نتائج مضمونة", desc: "حلول مثبتة الفعالية" },
+    { icon: Headphones, title: "دعم مستمر", desc: "خدمة عملاء 24/7" },
+    { icon: Cloud, title: "تقنيات حديثة", desc: "أحدث الأدوات والتقنيات" },
   ];
 
   return (
@@ -130,7 +140,7 @@ const Services: React.FC = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -140,14 +150,14 @@ const Services: React.FC = () => {
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
               🛠️ خدماتنا المتميزة
             </span>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               حلول تقنية <span className="text-gradient">شاملة ومتطورة</span>
             </h1>
-            
+
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              نقدم مجموعة واسعة من الخدمات التقنية المتخصصة التي تلبي جميع احتياجات الأفراد والشركات 
-              في العصر الرقمي الحديث
+              نقدم مجموعة واسعة من الخدمات التقنية المتخصصة التي تلبي جميع
+              احتياجات الأفراد والشركات في العصر الرقمي الحديث
             </p>
 
             <Link to="/contact" className="btn-primary">
@@ -179,14 +189,16 @@ const Services: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex items-center text-white">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mr-3`}>
+                      <div
+                        className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mr-3`}
+                      >
                         <service.icon className="w-6 h-6" />
                       </div>
                       <h3 className="text-xl font-bold">{service.category}</h3>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <ul className="space-y-3 mb-6">
                     {service.services.map((item, itemIndex) => (
@@ -194,7 +206,10 @@ const Services: React.FC = () => {
                         key={itemIndex}
                         initial={{ opacity: 0, x: -20 }}
                         animate={inView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.5, delay: (index * 0.1) + (itemIndex * 0.05) }}
+                        transition={{
+                          duration: 0.5,
+                          delay: index * 0.1 + itemIndex * 0.05,
+                        }}
                         className="flex items-center text-gray-600 hover:text-primary-600 transition-colors duration-200"
                       >
                         <CheckCircle className="w-4 h-4 text-green-500 ml-3 flex-shrink-0" />
@@ -202,15 +217,19 @@ const Services: React.FC = () => {
                       </motion.li>
                     ))}
                   </ul>
-                  
-                  <motion.button
+
+                  <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full py-3 bg-gradient-to-r from-gray-100 to-gray-200 hover:from-primary-500 hover:to-secondary-500 text-gray-700 hover:text-white rounded-xl font-semibold transition-all duration-300 flex items-center justify-center"
                   >
-                    <span>اطلب الخدمة</span>
-                    <ArrowRight className="w-4 h-4 mr-2" />
-                  </motion.button>
+                    <Link
+                      to="/contact"
+                      className="w-full py-3 bg-gradient-to-r from-gray-100 to-gray-200 hover:from-primary-500 hover:to-secondary-500 text-gray-700 hover:text-white rounded-xl font-semibold transition-all duration-300 flex items-center justify-center"
+                    >
+                      <span>اطلب الخدمة</span>
+                      <ArrowLeft className="w-4 h-4 mr-2" />
+                    </Link>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
@@ -234,7 +253,7 @@ const Services: React.FC = () => {
               نتميز بخبرتنا الواسعة والتزامنا بأعلى معايير الجودة والابتكار
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
@@ -267,13 +286,17 @@ const Services: React.FC = () => {
               هل تحتاج خدمة مخصصة؟
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              نحن نقدم حلولاً مخصصة تماماً لاحتياجاتك الفريدة. تواصل معنا لمناقشة مشروعك
+              نحن نقدم حلولاً مخصصة تماماً لاحتياجاتك الفريدة. تواصل معنا
+              لمناقشة مشروعك
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="btn-primary">
                 تواصل معنا الآن
               </Link>
-              <Link to="/portfolio" className="px-8 py-3 border-2 border-primary-500 text-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-300">
+              <Link
+                to="/portfolio"
+                className="px-8 py-3 border-2 border-primary-500 text-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-300"
+              >
                 شاهد أعمالنا
               </Link>
             </div>

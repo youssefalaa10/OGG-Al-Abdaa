@@ -1,43 +1,44 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  
-  Mail, 
-  Phone, 
-  MapPin, 
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
   Globe,
   Linkedin,
   Twitter,
   Instagram,
-  ArrowUp
-} from 'lucide-react';
-import oggLogo from '/OGG-LOGO.png';
+  ArrowUp,
+} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import oggLogo from "/OGG-LOGO.png";
+import { Link } from "react-router-dom";
 const Footer: React.FC = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const quickLinks = [
-    { name: 'الرئيسية', href: '#home' },
-    { name: 'خدماتنا', href: '#services' },
-    { name: 'من نحن', href: '#about' },
-    { name: 'تواصل معنا', href: '#contact' },
+    { name: "الرئيسية", href: "#home" },
+    { name: "خدماتنا", href: "#services" },
+    { name: "من نحن", href: "#about" },
+    { name: "تواصل معنا", href: "#contact" },
   ];
 
   const services = [
-    'تطوير المواقع الإلكترونية',
-    'تطبيقات الجوال',
-    'الأنظمة المؤسسية',
-    'التسويق الرقمي',
-    'الأمان السيبراني',
-    'الاستشارات التقنية',
+    "تطوير المواقع الإلكترونية",
+    "تطبيقات الجوال",
+    "الأنظمة المؤسسية",
+    "التسويق الرقمي",
+    "الأمان السيبراني",
+    "الاستشارات التقنية",
   ];
 
   const socialLinks = [
-    { icon: Globe, link: '#', name: 'الموقع الإلكتروني' },
-    { icon: Linkedin, link: '#', name: 'لينكد إن' },
-    { icon: Twitter, link: '#', name: 'تويتر' },
-    { icon: Instagram, link: '#', name: 'إنستغرام' },
+    { icon: Globe, link: "#", name: "الموقع الإلكتروني" },
+    { icon: Linkedin, link: "#", name: "لينكد إن" },
+    { icon: Twitter, link: "#", name: "تويتر" },
+    { icon: Instagram, link: "#", name: "إنستغرام" },
   ];
 
   return (
@@ -74,19 +75,19 @@ const Footer: React.FC = () => {
               className="lg:col-span-1"
             >
               <div className="mb-6">
-  <img
-    src={oggLogo}
-    alt="OGG Logo"
-    className="w-45 h-16 object-contain rounded-xl"
-  />
-</div>
+                <img
+                  src={oggLogo}
+                  alt="OGG Logo"
+                  className="w-45 h-16 object-contain rounded-xl"
+                />
+              </div>
 
-              
               <p className="text-gray-300 mb-6 leading-relaxed">
-                شركة رائدة في مجال التقنية بالمملكة العربية السعودية، نقدم حلولاً رقمية متطورة 
-                تمكن الأفراد والشركات من المنافسة بثقة في البيئة الرقمية.
+                شركة رائدة في مجال التقنية بالمملكة العربية السعودية، نقدم
+                حلولاً رقمية متطورة تمكن الأفراد والشركات من المنافسة بثقة في
+                البيئة الرقمية.
               </p>
-              
+
               <div className="flex space-x-4 space-x-reverse">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -137,13 +138,13 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {services.map((service) => (
                   <li key={service}>
-                    <a
-                      href="#services"
+                    <Link
+                      to="/services"
                       className="text-gray-300 hover:text-primary-400 transition-colors duration-300 flex items-center group text-sm"
                     >
                       <span className="w-2 h-2 bg-secondary-500 rounded-full ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {service}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -163,24 +164,30 @@ const Footer: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">البريد الإلكتروني</p>
-                    <a href="mailto:info@awjtech.sa" className="text-gray-300 hover:text-primary-400 transition-colors">
-                      info@awjtech.sa
+                    <a
+                      href="mailto:info@oogtech.com.sa"
+                      className="text-gray-300 hover:text-primary-400 transition-colors"
+                    >
+                      info@oogtech.com.sa
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-3 space-x-reverse">
                   <div className="w-8 h-8 bg-green-600/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                     <Phone className="w-4 h-4 text-green-400" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">رقم الهاتف</p>
-                    <a href="tel:+966123456789" className="text-gray-300 hover:text-green-400 transition-colors">
+                    <a
+                      href="tel:+966531991229"
+                      className="text-gray-300 hover:text-green-400 transition-colors"
+                    >
                       +966 12 345 6789
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-3 space-x-reverse">
                   <div className="w-8 h-8 bg-red-600/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                     <MapPin className="w-4 h-4 text-red-400" />
@@ -188,8 +195,9 @@ const Footer: React.FC = () => {
                   <div>
                     <p className="text-sm text-gray-400">العنوان</p>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      جدة، حي الفيصلية<br />
-                      برج تلالين، طريق الملك فهد
+                      جدة، حي الفيصلية
+                      <br />
+                      شارع الملك فهد الفرعي برج بلاتيني
                     </p>
                   </div>
                 </div>
@@ -210,27 +218,44 @@ const Footer: React.FC = () => {
               >
                 © 2025 أوج الإبداع لتقنية المعلومات. جميع الحقوق محفوظة.
               </motion.p>
-              
+
               <div className="flex items-center space-x-6 space-x-reverse text-sm text-gray-400">
-                <a href="#" className="hover:text-primary-400 transition-colors">سياسة الخصوصية</a>
-                <a href="#" className="hover:text-primary-400 transition-colors">شروط الاستخدام</a>
-                <a href="#" className="hover:text-primary-400 transition-colors">ملفات تعريف الارتباط</a>
+                <a
+                  href="#"
+                  className="hover:text-primary-400 transition-colors"
+                >
+                  سياسة الخصوصية
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-primary-400 transition-colors"
+                >
+                  شروط الاستخدام
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-primary-400 transition-colors"
+                >
+                  ملفات تعريف الارتباط
+                </a>
               </div>
             </div>
           </div>
         </div>
 
         {/* Scroll to Top Button */}
-        <motion.button
-          onClick={scrollToTop}
+        <motion.a
+          href="https://wa.me/966531991229"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="fixed bottom-8 left-8 w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+          className="fixed bottom-8 left-8 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50"
         >
-          <ArrowUp className="w-6 h-6 text-white" />
-        </motion.button>
+          <FaWhatsapp className="w-6 h-6 text-white" />
+        </motion.a>
       </div>
     </footer>
   );

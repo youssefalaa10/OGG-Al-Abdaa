@@ -327,7 +327,7 @@ const Blog: React.FC = () => {
                 placeholder="أدخل بريدك الإلكتروني"
                 className="flex-1 px-6 py-3 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white/50"
               />
-              <button className="btn-secondary bg-white text-primary-600 hover:bg-gray-100 whitespace-nowrap">
+              <button className="btn-secondary bg-white text-white hover:bg-gray-100 whitespace-nowrap">
                 اشترك الآن
               </button>
             </div>

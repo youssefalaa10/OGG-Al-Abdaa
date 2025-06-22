@@ -48,13 +48,13 @@ const Home: React.FC = () => {
   const stats = [
     {
       icon: Users,
-      value: "500+",
+      value: "300+",
       label: "عميل راضٍ",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Award,
-      value: "200+",
+      value: "70+",
       label: "مشروع مكتمل",
       color: "from-green-500 to-emerald-500",
     },
@@ -136,31 +136,23 @@ const Home: React.FC = () => {
 
   const testimonials = [
     {
-      name: "أحمد المالكي",
-      position: "مدير تقني - شركة الرياض للتجارة",
       content:
         "فريق أوج الإبداع قدم لنا حلول تقنية متطورة ساعدتنا في تطوير أعمالنا بشكل كبير. الاحترافية والجودة كانت استثنائية.",
       rating: 5,
-      image:
-        "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=200",
     },
     {
-      name: "فاطمة العتيبي",
-      position: "مؤسسة - متجر الأناقة الرقمي",
       content:
         "تطوير متجرنا الإلكتروني كان تجربة رائعة. الموقع سريع وجميل وزاد من مبيعاتنا بنسبة 300% في أول شهر.",
       rating: 5,
-      image:
-        "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=200",
     },
     {
-      name: "محمد الشهري",
-      position: "مدير عام - مستشفى النور",
+      // name: "محمد الشهري",
+      // position: "مدير عام - مستشفى النور",
       content:
         "نظام إدارة المستشفى الذي طوروه لنا سهل علينا العمل كثيراً. الآن نستطيع إدارة المرضى والمواعيد بكفاءة عالية.",
       rating: 5,
-      image:
-        "https://images.pexels.com/photos/3785081/pexels-photo-3785081.jpeg?auto=compress&cs=tinysrgb&w=200",
+      // image:
+      //   "https://images.pexels.com/photos/3785081/pexels-photo-3785081.jpeg?auto=compress&cs=tinysrgb&w=200",
     },
   ];
 
@@ -483,9 +475,12 @@ const Home: React.FC = () => {
                       ))}
                     </div>
 
-                    <button className="w-full py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg sm:rounded-xl font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 text-sm">
+                    <Link
+                      to="/services"
+                      className="block w-full py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg sm:rounded-xl font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 text-sm text-center"
+                    >
                       اعرف المزيد
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -579,7 +574,7 @@ const Home: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
-                key={testimonial.name}
+                key={testimonial.rating}
                 initial={{ opacity: 0, y: 30, rotateY: -15 }}
                 animate={
                   testimonialsInView ? { opacity: 1, y: 0, rotateY: 0 } : {}
@@ -606,7 +601,7 @@ const Home: React.FC = () => {
                     "{testimonial.content}"
                   </p>
 
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
@@ -620,7 +615,7 @@ const Home: React.FC = () => {
                         {testimonial.position}
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             ))}

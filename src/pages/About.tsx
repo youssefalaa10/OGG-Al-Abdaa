@@ -58,8 +58,8 @@ const About: React.FC = () => {
   ];
 
   const achievements = [
-    { number: '500+', label: 'مشروع مكتمل', icon: CheckCircle },
-    { number: '200+', label: 'عميل راضٍ', icon: Users },
+    { number: '70+', label: 'مشروع مكتمل', icon: CheckCircle },
+    { number: '300+', label: 'عميل راضٍ', icon: Users },
     { number: '5+', label: 'سنوات خبرة', icon: Calendar },
     { number: '99%', label: 'معدل رضا العملاء', icon: Heart },
   ];

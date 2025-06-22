@@ -226,8 +226,8 @@ const Portfolio: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '200+', label: 'مشروع مكتمل' },
-              { number: '150+', label: 'عميل راضٍ' },
+              { number: '70+', label: 'مشروع مكتمل' },
+              { number: '300+', label: 'عميل راضٍ' },
               { number: '50+', label: 'شريك تقني' },
               { number: '99%', label: 'معدل النجاح' },
             ].map((stat, index) => (
