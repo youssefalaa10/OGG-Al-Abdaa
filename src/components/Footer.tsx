@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
                 البيئة الرقمية.
               </p>
 
-              <div className="flex space-x-4 space-x-reverse">
+              {/* <div className="flex space-x-4 space-x-reverse">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.name}
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                     <social.icon className="w-5 h-5" />
                   </motion.a>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Quick Links */}
