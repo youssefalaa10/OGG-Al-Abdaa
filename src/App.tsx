@@ -8,6 +8,7 @@ import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import InvestmentLicense from './pages/investment-license';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/investment-license" element={<InvestmentLicense />} />
           </Routes>
         </main>
         <Footer />
