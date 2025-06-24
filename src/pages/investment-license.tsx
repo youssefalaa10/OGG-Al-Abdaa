@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   CheckCircle,
   Star,
@@ -28,25 +28,41 @@ import {
   Crown,
   Gem,
   Rocket,
-  Briefcase
-} from 'lucide-react';
+  Briefcase,
+} from "lucide-react";
 
 const InvestmentLicense: React.FC = () => {
-  const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [featuresRef, featuresInView] = useInView({ triggerOnce: true, threshold: 0.2 });
-  const [testimonialsRef, testimonialsInView] = useInView({ triggerOnce: true, threshold: 0.2 });
-  const [pricingRef, pricingInView] = useInView({ triggerOnce: true, threshold: 0.2 });
-  
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    businessType: '',
-    message: ''
+  const [heroRef, heroInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [featuresRef, featuresInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const [testimonialsRef, testimonialsInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const [pricingRef, pricingInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    businessType: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -55,175 +71,181 @@ const InvestmentLicense: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     setIsFormOpen(false);
   };
 
   const features = [
     {
       icon: Building,
-      title: 'بدون شركة خارجية',
-      description: 'لا تحتاج لشركة مسجلة خارج المملكة',
-      color: 'from-blue-500 to-cyan-500',
-      bgPattern: 'bg-gradient-to-br from-blue-50 to-cyan-50'
+      title: "بدون شركة خارجية",
+      description: "لا تحتاج لشركة مسجلة خارج المملكة",
+      color: "from-blue-500 to-cyan-500",
+      bgPattern: "bg-gradient-to-br from-blue-50 to-cyan-50",
     },
     {
       icon: FileText,
-      title: 'بدون قوائم مالية',
-      description: 'لا حاجة لتقديم قوائم مالية معتمدة',
-      color: 'from-green-500 to-emerald-500',
-      bgPattern: 'bg-gradient-to-br from-green-50 to-emerald-50'
+      title: "بدون قوائم مالية",
+      description: "لا حاجة لتقديم قوائم مالية معتمدة",
+      color: "from-green-500 to-emerald-500",
+      bgPattern: "bg-gradient-to-br from-green-50 to-emerald-50",
     },
     {
       icon: DollarSign,
-      title: 'بدون حد أدنى لرأس المال',
-      description: 'ابدأ بأي مبلغ تريده دون قيود',
-      color: 'from-purple-500 to-pink-500',
-      bgPattern: 'bg-gradient-to-br from-purple-50 to-pink-50'
+      title: "بدون حد أدنى لرأس المال",
+      description: "ابدأ بأي مبلغ تريده دون قيود",
+      color: "from-purple-500 to-pink-500",
+      bgPattern: "bg-gradient-to-br from-purple-50 to-pink-50",
     },
     {
       icon: Clock,
-      title: 'سرعة في الإنجاز',
-      description: 'استخراج الترخيص خلال أسبوع إلى شهر',
-      color: 'from-orange-500 to-red-500',
-      bgPattern: 'bg-gradient-to-br from-orange-50 to-red-50'
-    }
+      title: "سرعة في الإنجاز",
+      description: "استخراج الترخيص خلال أسبوع إلى شهر",
+      color: "from-orange-500 to-red-500",
+      bgPattern: "bg-gradient-to-br from-orange-50 to-red-50",
+    },
   ];
 
   const benefits = [
     {
       icon: DollarSign,
-      title: 'وفر 250,000 ريال',
-      description: 'على مدار 5 سنوات مقارنة بالترخيص العادي',
-      amount: '250,000',
-      unit: 'ريال',
-      color: 'from-green-500 to-emerald-600',
-      accent: 'text-green-600'
+      title: "وفر 250,000 ريال",
+      description: "على مدار 5 سنوات مقارنة بالترخيص العادي",
+      amount: "250,000",
+      unit: "ريال",
+      color: "from-green-500 to-emerald-600",
+      accent: "text-green-600",
     },
     {
       icon: TrendingUp,
-      title: 'رسوم سنوية منخفضة',
-      description: '2,000 ريال بدلاً من 62,000 ريال سنوياً',
-      amount: '2,000',
-      unit: 'ريال',
-      color: 'from-blue-500 to-indigo-600',
-      accent: 'text-blue-600'
+      title: "رسوم سنوية منخفضة",
+      description: "2,000 ريال بدلاً من 62,000 ريال سنوياً",
+      amount: "2,000",
+      unit: "ريال",
+      color: "from-blue-500 to-indigo-600",
+      accent: "text-blue-600",
     },
     {
       icon: Smartphone,
-      title: 'تطبيق إلكتروني مجاني',
-      description: 'تصميم وبرمجة تطبيق احترافي لنشاطك',
-      amount: 'مجاناً',
-      unit: '',
-      color: 'from-purple-500 to-pink-600',
-      accent: 'text-purple-600'
-    }
+      title: "تطبيق إلكتروني مجاني",
+      description: "تصميم وبرمجة تطبيق احترافي لنشاطك",
+      amount: "مجاناً",
+      unit: "",
+      color: "from-purple-500 to-pink-600",
+      accent: "text-purple-600",
+    },
   ];
 
   const testimonials = [
     {
-      name: 'يوسف',
-      business: 'شركة لبيع الخضراوات والفواكه',
-      content: 'الاحترافية كانت واضحة من أول اجتماع. شرحوا لي الخطوات بالعامي وبساطة، وبعد ما رفعنا الملف عبر بوابة الوزارة جتنا الموافقة كأن الموضوع سهل من البداية!',
+      name: "يوسف",
+      business: "شركة لبيع الخضراوات والفواكه",
+      content:
+        "الاحترافية كانت واضحة من أول اجتماع. شرحوا لي الخطوات بالعامي وبساطة، وبعد ما رفعنا الملف عبر بوابة الوزارة جتنا الموافقة كأن الموضوع سهل من البداية!",
       rating: 5,
-      avatar: 'Y'
+      avatar: "Y",
     },
     {
-      name: 'عبدالله',
-      business: 'شركة لإدارة المعارض والمؤتمرات',
-      content: 'مرة حسّيت إن الموضوع صعب ووقت طويل، بس بعد ما تعاونا معاهم صار الملف كامل والتفاصيل واضحة. جيناهم طلبوا توضيح بسيط والأنشطة المطلوبة، وطلعنا الترخيص خلال شهر.',
+      name: "عبدالله",
+      business: "شركة لإدارة المعارض والمؤتمرات",
+      content:
+        "مرة حسّيت إن الموضوع صعب ووقت طويل، بس بعد ما تعاونا معاهم صار الملف كامل والتفاصيل واضحة. جيناهم طلبوا توضيح بسيط والأنشطة المطلوبة، وطلعنا الترخيص خلال شهر.",
       rating: 5,
-      avatar: 'ع'
+      avatar: "ع",
     },
     {
-      name: 'بندر',
-      business: 'شركة مقاولات',
-      content: 'أنا كنت جاي أقدم على ترخيص استثمار عادي، لكن بعد ما اقترحوا علينا الترخيص الريادي وشرح إضافة فكرة تقنية وتصميم تطبيق مخصص للنشاط، الملف صار متكامل، واللجنة وافقت علينا خلال 3 أسابيع!',
+      name: "بندر",
+      business: "شركة مقاولات",
+      content:
+        "أنا كنت جاي أقدم على ترخيص استثمار عادي، لكن بعد ما اقترحوا علينا الترخيص الريادي وشرح إضافة فكرة تقنية وتصميم تطبيق مخصص للنشاط، الملف صار متكامل، واللجنة وافقت علينا خلال 3 أسابيع!",
       rating: 5,
-      avatar: 'ب'
-    }
+      avatar: "ب",
+    },
   ];
 
   const steps = [
     {
-      number: '01',
-      title: 'الاستشارة الأولية',
-      description: 'نستمع لفكرتك ونقدم لك النصائح المناسبة',
+      number: "01",
+      title: "الاستشارة الأولية",
+      description: "نستمع لفكرتك ونقدم لك النصائح المناسبة",
       icon: MessageCircle,
-      color: 'from-blue-500 to-cyan-500'
+      color: "from-blue-500 to-cyan-500",
     },
     {
-      number: '02',
-      title: 'صياغة الفكرة التقنية',
-      description: 'نطور فكرة مبتكرة تناسب نشاطك وتلبي متطلبات الترخيص',
+      number: "02",
+      title: "صياغة الفكرة التقنية",
+      description: "نطور فكرة مبتكرة تناسب نشاطك وتلبي متطلبات الترخيص",
       icon: Target,
-      color: 'from-purple-500 to-pink-500'
+      color: "from-purple-500 to-pink-500",
     },
     {
-      number: '03',
-      title: 'تصميم التطبيق',
-      description: 'نصمم تجربة مستخدم سلسة وواجهات جذابة',
+      number: "03",
+      title: "تصميم التطبيق",
+      description: "نصمم تجربة مستخدم سلسة وواجهات جذابة",
       icon: Smartphone,
-      color: 'from-green-500 to-emerald-500'
+      color: "from-green-500 to-emerald-500",
     },
     {
-      number: '04',
-      title: 'تجهيز الملف الاستثماري',
-      description: 'نعد ملفاً متكاملاً يضمن الموافقة من الجهات المختصة',
+      number: "04",
+      title: "تجهيز الملف الاستثماري",
+      description: "نعد ملفاً متكاملاً يضمن الموافقة من الجهات المختصة",
       icon: FileText,
-      color: 'from-orange-500 to-red-500'
+      color: "from-orange-500 to-red-500",
     },
     {
-      number: '05',
-      title: 'التقديم والمتابعة',
-      description: 'نتولى إجراءات التقديم ومتابعة الطلب',
+      number: "05",
+      title: "التقديم والمتابعة",
+      description: "نتولى إجراءات التقديم ومتابعة الطلب",
       icon: Clock,
-      color: 'from-indigo-500 to-purple-500'
+      color: "from-indigo-500 to-purple-500",
     },
     {
-      number: '06',
-      title: 'استخراج الترخيص',
-      description: 'بعد الموافقة، نستكمل إجراءات استخراج الترخيص',
+      number: "06",
+      title: "استخراج الترخيص",
+      description: "بعد الموافقة، نستكمل إجراءات استخراج الترخيص",
       icon: Award,
-      color: 'from-yellow-500 to-orange-500'
-    }
+      color: "from-yellow-500 to-orange-500",
+    },
   ];
 
   const comparison = [
     {
-      feature: 'شركة خارجية',
-      regular: 'مطلوبة',
-      entrepreneurial: 'غير مطلوبة',
+      feature: "شركة خارجية",
+      regular: "مطلوبة",
+      entrepreneurial: "غير مطلوبة",
       regularIcon: X,
-      entrepreneurialIcon: CheckCircle
+      entrepreneurialIcon: CheckCircle,
     },
     {
-      feature: 'قوائم مالية',
-      regular: 'مطلوبة',
-      entrepreneurial: 'غير مطلوبة',
+      feature: "قوائم مالية",
+      regular: "مطلوبة",
+      entrepreneurial: "غير مطلوبة",
       regularIcon: X,
-      entrepreneurialIcon: CheckCircle
+      entrepreneurialIcon: CheckCircle,
     },
     {
-      feature: 'الحد الأدنى لرأس المال',
-      regular: '7 ملايين ريال',
-      entrepreneurial: 'لا يوجد حد أدنى',
+      feature: "الحد الأدنى لرأس المال",
+      regular: "7 ملايين ريال",
+      entrepreneurial: "لا يوجد حد أدنى",
       regularIcon: X,
-      entrepreneurialIcon: CheckCircle
+      entrepreneurialIcon: CheckCircle,
     },
     {
-      feature: 'الرسوم السنوية',
-      regular: '62,000 ريال',
-      entrepreneurial: '2,000 ريال فقط',
+      feature: "الرسوم السنوية",
+      regular: "62,000 ريال",
+      entrepreneurial: "2,000 ريال فقط",
       regularIcon: X,
-      entrepreneurialIcon: CheckCircle
-    }
+      entrepreneurialIcon: CheckCircle,
+    },
   ];
 
   return (
     <div className="pt-16 overflow-hidden">
       {/* Hero Section - Poster Style */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center">
+      <section
+        ref={heroRef}
+        className="relative min-h-screen flex items-center py-20 lg:py-32"
+      >
         {/* Background with Geometric Patterns */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900">
           {/* Geometric Shapes */}
@@ -252,7 +274,7 @@ const InvestmentLicense: React.FC = () => {
               }}
               className="absolute bottom-20 left-20 w-80 h-80 border-4 border-secondary-400/20 rounded-full"
             />
-            
+
             {/* Floating Elements */}
             <motion.div
               animate={{ y: [0, -20, 0] }}
@@ -261,19 +283,29 @@ const InvestmentLicense: React.FC = () => {
             />
             <motion.div
               animate={{ y: [0, 20, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
               className="absolute top-1/3 right-1/3 w-4 h-4 bg-cyan-400 rounded-full opacity-60"
             />
             <motion.div
               animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2,
+              }}
               className="absolute bottom-1/3 left-1/2 w-8 h-8 bg-pink-400 rounded-full opacity-60"
             />
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
             {/* Content */}
             <div className="text-white">
               <motion.div
@@ -286,7 +318,7 @@ const InvestmentLicense: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={heroInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="inline-flex items-center space-x-2 space-x-reverse px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black rounded-full text-sm font-bold mb-8 shadow-2xl"
+                  className="inline-flex items-center space-x-2 space-x-reverse px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black rounded-full text-sm font-bold mb-12 shadow-2xl"
                 >
                   <Sparkles className="w-5 h-5" />
                   <span>عرض خاص محدود - خصم 15% لأول 10 عملاء</span>
@@ -298,13 +330,13 @@ const InvestmentLicense: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={heroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-none"
+                  className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-none"
                 >
                   <span className="block text-white">أسس شركتك</span>
                   <span className="block bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
                     في السعودية
                   </span>
-                  <span className="block text-3xl md:text-4xl lg:text-5xl font-bold text-white/90 mt-4">
+                  <span className="block text-3xl md:text-4xl lg:text-5xl font-bold text-white/90 mt-6">
                     بدون شروط تعجيزية
                   </span>
                 </motion.h1>
@@ -314,11 +346,14 @@ const InvestmentLicense: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={heroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-medium"
+                  className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed font-medium"
                 >
                   حوّل حلمك إلى حقيقة واستثمر في أرض الفرص
                   <br />
-                  <span className="text-yellow-400 font-bold">بدون شركة خارجية • بدون قوائم مالية • بدون حد أدنى لرأس المال</span>
+                  <span className="text-yellow-400 font-bold">
+                    بدون شركة خارجية • بدون قوائم مالية • بدون حد أدنى لرأس
+                    المال
+                  </span>
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -326,11 +361,11 @@ const InvestmentLicense: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={heroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="flex flex-col sm:flex-row gap-4 mb-12"
+                  className="flex flex-col sm:flex-row gap-6 mb-16"
                 >
                   <button
                     onClick={() => setIsFormOpen(true)}
-                    className="group relative bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black font-black py-5 px-10 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg overflow-hidden"
+                    className="group relative bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black font-black py-6 px-12 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative flex items-center justify-center space-x-2 space-x-reverse">
@@ -342,7 +377,7 @@ const InvestmentLicense: React.FC = () => {
 
                   <a
                     href="https://wa.me/966531991229"
-                    className="group flex items-center justify-center space-x-3 space-x-reverse px-8 py-5 border-3 border-white/30 rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm text-lg font-bold"
+                    className="group flex items-center justify-center space-x-3 space-x-reverse px-10 py-6 border-3 border-white/30 rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm text-lg font-bold"
                   >
                     <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
                     <span>تواصل عبر الواتساب</span>
@@ -354,17 +389,17 @@ const InvestmentLicense: React.FC = () => {
                   initial={{ opacity: 0 }}
                   animate={heroInView ? { opacity: 1 } : {}}
                   transition={{ duration: 1, delay: 0.8 }}
-                  className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm"
+                  className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm"
                 >
-                  <div className="flex items-center space-x-2 space-x-reverse bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
+                  <div className="flex items-center space-x-2 space-x-reverse bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
                     <Shield className="w-5 h-5 text-green-400" />
                     <span className="font-semibold">ضمان استرجاد المبلغ</span>
                   </div>
-                  <div className="flex items-center space-x-2 space-x-reverse bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
+                  <div className="flex items-center space-x-2 space-x-reverse bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
                     <Clock className="w-5 h-5 text-blue-400" />
                     <span className="font-semibold">استخراج خلال أسبوع</span>
                   </div>
-                  <div className="flex items-center space-x-2 space-x-reverse bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
+                  <div className="flex items-center space-x-2 space-x-reverse bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
                     <Award className="w-5 h-5 text-yellow-400" />
                     <span className="font-semibold">معتمد من الوزارة</span>
                   </div>
@@ -381,31 +416,39 @@ const InvestmentLicense: React.FC = () => {
             >
               <div className="relative">
                 {/* Main Card */}
-                <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+                <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-10 border border-white/20 shadow-2xl">
                   <div className="text-center text-white">
                     {/* Icon */}
-                    <div className="w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                      <Building className="w-12 h-12 text-black" />
+                    <div className="w-28 h-28 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl">
+                      <Building className="w-14 h-14 text-black" />
                     </div>
-                    
+
                     {/* Title */}
-                    <h3 className="text-3xl font-black mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                    <h3 className="text-3xl font-black mb-8 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                       ترخيص استثمار ريادي
                     </h3>
-                    
+
                     {/* Stats */}
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between bg-white/10 rounded-xl px-4 py-3">
+                    <div className="space-y-6">
+                      <div className="flex items-center justify-between bg-white/10 rounded-xl px-6 py-4">
                         <span className="font-semibold">الرسوم السنوية:</span>
-                        <span className="font-black text-green-400 text-xl">2,000 ريال</span>
+                        <span className="font-black text-green-400 text-xl">
+                          2,000 ريال
+                        </span>
                       </div>
-                      <div className="flex items-center justify-between bg-white/10 rounded-xl px-4 py-3">
+                      <div className="flex items-center justify-between bg-white/10 rounded-xl px-6 py-4">
                         <span className="font-semibold">مدة الاستخراج:</span>
-                        <span className="font-black text-blue-400 text-xl">أسبوع - شهر</span>
+                        <span className="font-black text-blue-400 text-xl">
+                          أسبوع - شهر
+                        </span>
                       </div>
-                      <div className="flex items-center justify-between bg-white/10 rounded-xl px-4 py-3">
-                        <span className="font-semibold">رأس المال المطلوب:</span>
-                        <span className="font-black text-yellow-400 text-xl">لا يوجد حد أدنى</span>
+                      <div className="flex items-center justify-between bg-white/10 rounded-xl px-6 py-4">
+                        <span className="font-semibold">
+                          رأس المال المطلوب:
+                        </span>
+                        <span className="font-black text-yellow-400 text-xl">
+                          لا يوجد حد أدنى
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -414,8 +457,12 @@ const InvestmentLicense: React.FC = () => {
                 {/* Floating Elements */}
                 <motion.div
                   animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-8 -right-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-4 shadow-2xl"
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute -top-10 -right-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-5 shadow-2xl"
                 >
                   <div className="text-center text-white">
                     <div className="text-2xl font-black">وفر</div>
@@ -425,8 +472,12 @@ const InvestmentLicense: React.FC = () => {
 
                 <motion.div
                   animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-8 -left-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl p-4 shadow-2xl"
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute -bottom-10 -left-10 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl p-5 shadow-2xl"
                 >
                   <div className="text-center text-white">
                     <div className="text-2xl font-black">تطبيق</div>
@@ -436,8 +487,12 @@ const InvestmentLicense: React.FC = () => {
 
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-1/2 -left-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-3 shadow-2xl"
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute top-1/2 -left-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-4 shadow-2xl"
                 >
                   <Gem className="w-6 h-6 text-white" />
                 </motion.div>
@@ -448,12 +503,18 @@ const InvestmentLicense: React.FC = () => {
       </section>
 
       {/* Features Section - Magazine Style */}
-      <section ref={featuresRef} className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      <section
+        ref={featuresRef}
+        className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+      >
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -467,9 +528,12 @@ const InvestmentLicense: React.FC = () => {
               <Target className="w-5 h-5" />
               <span>لماذا الترخيص الريادي؟</span>
             </div>
-            
+
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              تجاوز كل <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">العقبات</span>
+              تجاوز كل{" "}
+              <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                العقبات
+              </span>
             </h2>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-medium">
               ابدأ استثمارك في المملكة بأسهل الطرق وأقل التكاليف
@@ -488,13 +552,19 @@ const InvestmentLicense: React.FC = () => {
               >
                 {/* Background Decoration */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/50 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-                
+
                 <div className="relative z-10">
-                  <div className={`w-20 h-20 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <div
+                    className={`w-20 h-20 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  >
                     <feature.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h4 className="text-xl font-black text-gray-900 mb-3">{feature.title}</h4>
-                  <p className="text-gray-600 font-medium leading-relaxed">{feature.description}</p>
+                  <h4 className="text-xl font-black text-gray-900 mb-3">
+                    {feature.title}
+                  </h4>
+                  <p className="text-gray-600 font-medium leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -511,24 +581,36 @@ const InvestmentLicense: React.FC = () => {
                 className="relative bg-white rounded-3xl p-8 text-center hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 group overflow-hidden"
               >
                 {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                ></div>
+
                 <div className="relative z-10">
-                  <div className={`w-20 h-20 bg-gradient-to-r ${benefit.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl`}>
+                  <div
+                    className={`w-20 h-20 bg-gradient-to-r ${benefit.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl`}
+                  >
                     <benefit.icon className="w-10 h-10 text-white" />
                   </div>
-                  
+
                   <div className="mb-4">
-                    <div className={`text-4xl font-black ${benefit.accent} mb-2`}>
+                    <div
+                      className={`text-4xl font-black ${benefit.accent} mb-2`}
+                    >
                       {benefit.amount}
                     </div>
                     {benefit.unit && (
-                      <div className="text-lg font-bold text-gray-600">{benefit.unit}</div>
+                      <div className="text-lg font-bold text-gray-600">
+                        {benefit.unit}
+                      </div>
                     )}
                   </div>
-                  
-                  <h4 className="text-xl font-black text-gray-900 mb-3">{benefit.title}</h4>
-                  <p className="text-gray-600 font-medium leading-relaxed">{benefit.description}</p>
+
+                  <h4 className="text-xl font-black text-gray-900 mb-3">
+                    {benefit.title}
+                  </h4>
+                  <p className="text-gray-600 font-medium leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -555,9 +637,12 @@ const InvestmentLicense: React.FC = () => {
               <Briefcase className="w-5 h-5" />
               <span>مراحل العمل معنا</span>
             </div>
-            
+
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              نرافقك في كل <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">خطوة</span>
+              نرافقك في كل{" "}
+              <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                خطوة
+              </span>
             </h2>
             <p className="text-2xl text-gray-600 font-medium">
               من الفكرة إلى الترخيص في 6 خطوات بسيطة
@@ -577,13 +662,19 @@ const InvestmentLicense: React.FC = () => {
                 <div className="absolute -top-6 right-8 w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-xl">
                   {step.number}
                 </div>
-                
+
                 <div className="mt-8">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  >
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-black text-gray-900 mb-4">{step.title}</h4>
-                  <p className="text-gray-600 font-medium leading-relaxed">{step.description}</p>
+                  <h4 className="text-xl font-black text-gray-900 mb-4">
+                    {step.title}
+                  </h4>
+                  <p className="text-gray-600 font-medium leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -604,9 +695,12 @@ const InvestmentLicense: React.FC = () => {
               <TrendingUp className="w-5 h-5" />
               <span>مقارنة شاملة</span>
             </div>
-            
+
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              الفرق <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">الواضح</span>
+              الفرق{" "}
+              <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                الواضح
+              </span>
             </h2>
             <p className="text-2xl text-gray-600 font-medium">
               اكتشف المزايا الحقيقية للترخيص الريادي
@@ -648,7 +742,9 @@ const InvestmentLicense: React.FC = () => {
                 <div className="p-8 text-center">
                   <div className="flex items-center justify-center space-x-3 space-x-reverse text-green-600">
                     <item.entrepreneurialIcon className="w-6 h-6" />
-                    <span className="font-black text-lg">{item.entrepreneurial}</span>
+                    <span className="font-black text-lg">
+                      {item.entrepreneurial}
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -658,7 +754,10 @@ const InvestmentLicense: React.FC = () => {
       </section>
 
       {/* Testimonials Section - Social Proof Style */}
-      <section ref={testimonialsRef} className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section
+        ref={testimonialsRef}
+        className="py-20 bg-gradient-to-br from-gray-50 to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -670,9 +769,12 @@ const InvestmentLicense: React.FC = () => {
               <Users className="w-5 h-5" />
               <span>آراء عملائنا</span>
             </div>
-            
+
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              تجارب <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">حقيقية</span>
+              تجارب{" "}
+              <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                حقيقية
+              </span>
             </h2>
             <p className="text-2xl text-gray-600 font-medium">
               عملاء حققوا أحلامهم الاستثمارية معنا
@@ -690,28 +792,35 @@ const InvestmentLicense: React.FC = () => {
               >
                 {/* Background Decoration */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full -translate-y-12 translate-x-12 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
+
                 <div className="relative z-10">
                   {/* Rating */}
                   <div className="flex mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                      <Star
+                        key={i}
+                        className="w-6 h-6 text-yellow-400 fill-current"
+                      />
                     ))}
                   </div>
-                  
+
                   {/* Content */}
                   <p className="text-gray-600 mb-8 leading-relaxed italic font-medium text-lg">
                     "{testimonial.content}"
                   </p>
-                  
+
                   {/* Author */}
                   <div className="flex items-center">
                     <div className="w-14 h-14 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center text-white font-black text-xl mr-4">
                       {testimonial.avatar}
                     </div>
                     <div>
-                      <h4 className="font-black text-gray-900 text-lg">{testimonial.name}</h4>
-                      <p className="text-primary-600 text-sm font-bold">{testimonial.business}</p>
+                      <h4 className="font-black text-gray-900 text-lg">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-primary-600 text-sm font-bold">
+                        {testimonial.business}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -735,7 +844,7 @@ const InvestmentLicense: React.FC = () => {
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             className="absolute bottom-10 left-10 w-48 h-48 bg-black/10 rounded-full blur-xl"
           />
-          
+
           {/* Geometric Shapes */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-black rotate-45"></div>
@@ -756,14 +865,14 @@ const InvestmentLicense: React.FC = () => {
               <span>عرض محدود لفترة قصيرة</span>
               <Sparkles className="w-6 h-6" />
             </div>
-            
+
             {/* Main Headline */}
             <h2 className="text-6xl md:text-8xl font-black mb-8 leading-none">
               خصم 15%
               <br />
               <span className="text-4xl md:text-5xl">لأول 10 عملاء</span>
             </h2>
-            
+
             {/* Benefits Grid */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 border border-black/10">
@@ -805,7 +914,7 @@ const InvestmentLicense: React.FC = () => {
             <p className="text-2xl mb-12 opacity-90 font-medium">
               لا تدع الفرصة تفوتك! سجل اهتمامك الآن أو تواصل معنا عبر الواتساب
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={() => setIsFormOpen(true)}
