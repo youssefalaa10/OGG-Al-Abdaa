@@ -286,7 +286,7 @@ const InvestmentLicense: React.FC = () => {
   ];
 
   return (
-    <div className="pt-16 overflow-hidden">
+    <div className="pt-20 overflow-hidden">
       {/* Hero Section - Poster Style */}
       <section
         ref={heroRef}
@@ -415,7 +415,7 @@ const InvestmentLicense: React.FC = () => {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative flex items-center justify-center space-x-2 space-x-reverse">
-                      <Rocket className="w-6 h-6" />
+                      <Rocket className="w-8 h-8" />
                       <span>احصل على استشارة مجانية</span>
                       <ArrowLeft className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -425,7 +425,7 @@ const InvestmentLicense: React.FC = () => {
                     href="https://wa.me/966531991229"
                     className="group flex items-center justify-center space-x-3 space-x-reverse px-10 py-6 border-3 border-white/30 rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm text-lg font-bold"
                   >
-                    <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                    <MessageCircle className="w-8 h-8  group-hover:scale-110 transition-transform" />
                     <span>تواصل عبر الواتساب</span>
                   </a>
                 </motion.div>

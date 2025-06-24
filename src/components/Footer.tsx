@@ -117,13 +117,13 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-gray-300 hover:text-primary-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-2 h-2 bg-primary-500 rounded-full ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
