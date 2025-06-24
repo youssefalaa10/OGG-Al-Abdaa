@@ -19,10 +19,11 @@ const Footer: React.FC = () => {
   };
 
   const quickLinks = [
-    { name: "الرئيسية", href: "#home" },
-    { name: "خدماتنا", href: "#services" },
-    { name: "من نحن", href: "#about" },
-    { name: "تواصل معنا", href: "#contact" },
+    { name: "الرئيسية", href: "/" },
+    { name: "خدماتنا", href: "/services" },
+    { name: "من نحن", href: "/about" },
+    { name: "تواصل معنا", href: "/contact" },
+    { name: "استثمار", href: "/investment" },
   ];
 
   const services = [
