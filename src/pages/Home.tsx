@@ -21,6 +21,7 @@ import {
   Heart,
   ArrowRight,
   Quote,
+  BrainCircuit,
 } from "lucide-react";
 
 const Home: React.FC = () => {
@@ -98,12 +99,16 @@ const Home: React.FC = () => {
       features: ["إدارة شاملة", "تقارير ذكية", "تكامل سلس"],
     },
     {
-      icon: Shield,
-      title: "الأمان السيبراني",
-      description: "حماية متقدمة للبيانات والأنظمة",
+      icon: BrainCircuit,
+      title: "حلول مؤتمتة بالذكاء الاصطناعي",
+      description: "أدوات ذكية لرفع كفاءة الأعمال وتحسين تجربة العملاء",
       image:
-        "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["حماية متقدمة", "مراقبة مستمرة", "استجابة سريعة"],
+        "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: [
+        "أتمتة سير العمل",
+        "تحليلات تنبؤية",
+        "مساعدات ذكية وروبوتات محادثة",
+      ],
     },
   ];
 
@@ -433,11 +438,11 @@ const Home: React.FC = () => {
                 animate={servicesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="group relative"
+                className="group relative h-full"
               >
-                <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
+                <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white h-full flex flex-col">
                   <div
-                    className="relative h-40 sm:h-48 overflow-hidden"
+                    className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0"
                     style={{
                       clipPath: "polygon(0 0, 100% 0, 100% 75%, 0 100%)",
                     }}
@@ -455,11 +460,11 @@ const Home: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-6">
+                  <div className="p-4 sm:p-6 flex flex-col flex-grow">
                     <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-3 sm:mb-4 leading-relaxed">
+                    <p className="text-gray-600 text-sm mb-3 sm:mb-4 leading-relaxed flex-grow">
                       {service.description}
                     </p>
 
@@ -477,7 +482,7 @@ const Home: React.FC = () => {
 
                     <Link
                       to="/services"
-                      className="block w-full py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg sm:rounded-xl font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 text-sm text-center"
+                      className="block w-full py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg sm:rounded-xl font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 text-sm text-center mt-auto"
                     >
                       اعرف المزيد
                     </Link>
