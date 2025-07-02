@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: "رقم الهاتف",
-      value: "+966 12 345 6789",
+      value: "+966 531991229",
       link: "tel:+966531991229",
       color: "from-green-500 to-emerald-500",
     },
@@ -230,6 +230,7 @@ const Contact: React.FC = () => {
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
                           placeholder="+966 5X XXX XXXX"
+                          dir="ltr"
                         />
                       </div>
 
@@ -322,7 +323,15 @@ const Contact: React.FC = () => {
                         <h4 className="font-semibold text-gray-900 mb-1">
                           {info.title}
                         </h4>
-                        <p className="text-gray-600 text-sm">{info.value}</p>
+                        <p className="text-gray-600 text-sm">
+                          {info.title === "رقم الهاتف" ? (
+                            <span dir="ltr" style={{ unicodeBidi: "isolate" }}>
+                              {info.value}
+                            </span>
+                          ) : (
+                            info.value
+                          )}
+                        </p>
                       </div>
                     </motion.a>
                   ))}
