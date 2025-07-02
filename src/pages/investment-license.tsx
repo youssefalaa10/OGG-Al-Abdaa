@@ -794,7 +794,8 @@ const InvestmentLicense: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden border-4 border-gray-100">
+          {/* Desktop Table View */}
+          <div className="hidden lg:block bg-white rounded-[2rem] shadow-2xl overflow-hidden border-4 border-gray-100">
             {/* Header - Ultra Premium Design */}
             <div className="grid grid-cols-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
               <div className="p-12 text-center border-r-4 border-white/30">
@@ -833,6 +834,55 @@ const InvestmentLicense: React.FC = () => {
                     <span className="font-black text-2xl">
                       {item.entrepreneurial}
                     </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile Card View */}
+          <div className="lg:hidden space-y-6">
+            {comparison.map((item, index) => (
+              <motion.div
+                key={item.feature}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: index * 0.1 }}
+                className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 overflow-hidden"
+              >
+                {/* Feature Title */}
+                <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white p-6">
+                  <h3 className="text-xl font-black text-center">
+                    {item.feature}
+                  </h3>
+                </div>
+
+                {/* Comparison Cards */}
+                <div className="p-6 space-y-4">
+                  {/* Regular License */}
+                  <div className="bg-red-50 rounded-xl p-4 border-2 border-red-200">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="text-lg font-bold text-red-700">
+                        الترخيص العادي
+                      </h4>
+                      <item.regularIcon className="w-8 h-8 text-red-600" />
+                    </div>
+                    <p className="text-red-800 font-bold text-lg">
+                      {item.regular}
+                    </p>
+                  </div>
+
+                  {/* Entrepreneurial License */}
+                  <div className="bg-green-50 rounded-xl p-4 border-2 border-green-200">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="text-lg font-bold text-green-700">
+                        الترخيص الريادي
+                      </h4>
+                      <item.entrepreneurialIcon className="w-8 h-8 text-green-600" />
+                    </div>
+                    <p className="text-green-800 font-bold text-lg">
+                      {item.entrepreneurial}
+                    </p>
                   </div>
                 </div>
               </motion.div>
