@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github, Eye, Filter, Code, Smartphone, Globe, Database } from 'lucide-react';
-
+import qutof from '/qutof.png';
+import Rawaed from '/Rawaed.png'
 const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
@@ -17,23 +18,23 @@ const Portfolio: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'منصة التجارة الإلكترونية المتقدمة',
-      description: 'متجر إلكتروني شامل مع نظام إدارة المخزون والمدفوعات',
-      category: 'ecommerce',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      client: 'شركة الأزياء العصرية',
-      year: '2023'
+      title: 'روائد الحلول',
+      description: 'نحن شركة متخصصة في تمكين الشركات في كل مرحلة من مراحل نموها وتطويرها، مع تركيز استراتيجي على تطوير الأعمال والحلول التقنية والمالية',    
+      category: 'Bussiness',
+      image: Rawaed,
+      technologies: ['Business Consulting', 'Tech Solutions', 'Financial Services'],
+      client: 'روائد الحلول',
+      year: '2025'
     },
     {
       id: 2,
-      title: 'تطبيق إدارة المشاريع',
-      description: 'تطبيق جوال لإدارة المشاريع والفرق بواجهة سهلة الاستخدام',
+      title: 'تطبيق قطوف فرش',
+      description: 'تطبيق جوال لبيع وتوصيل الخضروات والفواكه الطازجة للمنازل مع خيارات دفع متنوعة',
       category: 'mobile',
-      image: 'https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React Native', 'Firebase', 'Redux'],
-      client: 'شركة الإنشاءات الحديثة',
-      year: '2023'
+      image: qutof,
+      technologies: ['Flutter', 'Supabase', 'Bloc'],
+      client: 'قطوف فرش',
+      year: '2025'
     },
     {
       id: 3,

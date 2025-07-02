@@ -184,7 +184,9 @@ const Footer: React.FC = () => {
                       href="tel:+966531991229"
                       className="text-gray-300 hover:text-green-400 transition-colors"
                     >
-                      +966 12 345 6789
+                      <span dir="ltr" style={{ unicodeBidi: "isolate" }}>
+                        +966 53 199 1229
+                      </span>
                     </a>
                   </div>
                 </div>

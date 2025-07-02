@@ -11,7 +11,7 @@ import {
   Briefcase,
   BookOpen,
 } from "lucide-react";
-import logo from "/logo.png";
+import logo from "/OGG-LOGO.png";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -83,12 +83,9 @@ const Header: React.FC = () => {
               <img
                 src={logo}
                 alt="OGG Logo"
-                className="w-12 h-12 object-contain rounded-xl"
+                className="w-18 h-12 object-contain rounded-xl"
               />
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">OGG</h1>
-                <p className="text-sm text-gray-600">أوج الإبداع</p>
-              </div>
+             
             </Link>
           </motion.div>
 
